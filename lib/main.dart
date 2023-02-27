@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
         appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(color: Colors.red),
+          iconTheme: IconThemeData(color: Color(0xffD62E1E)),
           // foregroundColor: Colors.red,
         ),
       ),
