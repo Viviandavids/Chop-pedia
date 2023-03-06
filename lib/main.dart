@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:chopedia/features/search.dart';
-import 'package:chopedia/features/home.dart';
+import 'package:chopedia/features/search/search.dart';
+import 'package:chopedia/features/home/home.dart';
 import 'package:chopedia/features/pantry.dart';
 import 'package:chopedia/features/profile.dart';
 import 'package:chopedia/features/planner.dart';

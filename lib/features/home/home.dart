@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:chopedia/features/categories.dart';
+import 'package:chopedia/features/home/categories.dart';
 import 'package:flutter/material.dart';
-import '../shared_widget/youtube.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import '../../shared_widget/youtube.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -19,10 +18,10 @@ class _HomeState extends State<Home> {
         title: const Text(
           "CHOP'PEDIA",
           style: TextStyle(
-              color: Color(0xffD62E1E),
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-              fontFamily: 'RobotoMono'),
+            color: Color(0xffD62E1E),
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
         centerTitle: true,
         actions: [
@@ -44,6 +43,7 @@ class _HomeState extends State<Home> {
           child: Text("Daily Inspiration",
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: 'Raleway',
                 fontWeight: FontWeight.bold,
               )),
         ),
