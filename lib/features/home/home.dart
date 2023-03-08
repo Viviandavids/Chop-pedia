@@ -72,27 +72,31 @@ class _VideoState extends State<Video> {
   final List<YouTube> carousel = const [
     YouTube(
       timeDuration: '20 mins',
-      food: 'Tuwo Shinkafa (Rice Meal Swallow) - 432 kcal',
+      food: 'Akara and pap',
       ratings: 4.8,
       ingredient: '8 Ingredients',
+      image: 'assets/images/breakfast3.jpg',
     ),
     YouTube(
       timeDuration: '10 mins',
       food: 'Nigerian Jollof rice, plantain and Turkey',
       ratings: 5.0,
       ingredient: '12 Ingredients',
+      image: 'assets/images/food3.jpg',
     ),
     YouTube(
       timeDuration: '15 mins',
       food: 'Beans and fried plantain',
       ratings: 4.5,
       ingredient: '10 ingredients',
+      image: 'assets/images/beans1.jpg',
     ),
     YouTube(
       timeDuration: '30 mins',
       food: 'Amala and Ewedu',
       ratings: 4.2,
       ingredient: '15 ingredients',
+      image: 'assets/images/amala.jpg',
     ),
   ];
 

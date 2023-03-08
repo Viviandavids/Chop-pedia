@@ -1,3 +1,6 @@
+import 'package:chopedia/constants/routes.dart';
+import 'package:chopedia/features/search/breakfast.dart';
+import 'package:chopedia/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chopedia/features/search/search.dart';
 import 'package:chopedia/features/home/home.dart';
@@ -22,10 +25,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Color(0xffD62E1E)),
-          // foregroundColor: Colors.red,
         ),
       ),
-      home: const MyHomePage(title: "CHOP'PEDIA"),
+      home: const SplashScreen(),
+      routes: {
+        '/home': (context) => const MyHomePage(title: "CHOP'PEDIA"),
+        '/breakfast': (context) => const Breakfast(),
+        breakfastRoute: (context) => const Breakfast(),
+      },
     );
   }
 }

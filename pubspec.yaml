@@ -44,6 +44,7 @@ dependencies:
   cloud_firestore: ^3.1.17
   firebase_analytics: ^9.1.9
   flutter_launcher_icons: ^0.10.0
+  google_sign_in: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -105,6 +106,13 @@ flutter:
      - assets/images/dinner2.jpg
      - assets/images/dinner1.jpg
      - assets/images/dinner.jpg
+     - assets/icon/icon.png
+     - assets/splash_screen.png
+     - assets/images/amala.jpg
+     - assets/images/beans.jpg
+     - assets/images/beans1.jpg
+     - assets/images/beans.jpg
+     - assets/images/basmatic.jpg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

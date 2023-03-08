@@ -4,6 +4,7 @@ class YouTube extends StatelessWidget {
   final String timeDuration;
   final String food;
   final String ingredient;
+  final String image;
   final double? ratings;
 
   const YouTube({
@@ -11,6 +12,7 @@ class YouTube extends StatelessWidget {
     required this.timeDuration,
     required this.food,
     required this.ingredient,
+    required this.image,
     required this.ratings,
   }) : super(key: key);
 
@@ -28,9 +30,8 @@ class YouTube extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: const Color(0xffD62E1E),
-                  image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/images/food3.jpg')),
+                  image: DecorationImage(
+                      fit: BoxFit.fill, image: AssetImage(image)),
                 ),
                 height: 170,
               ),
