@@ -1,3 +1,4 @@
+import 'package:chopedia/authentication/google_sign_in.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -6,14 +7,29 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
-        title: Image.asset('assets/icon/icon.png'),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(
+            Icons.keyboard_arrow_left,
+            semanticLabel: 'back',
+          ),
+        ),
+        title: Image.asset(
+          'assets/icon/icon.png',
+          fit: BoxFit.cover,
+          height: 50,
+        ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
@@ -64,35 +80,31 @@ class SignInPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16.0),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ElevatedButton.icon(
                   onPressed: () {},
-                  icon: Image.asset('assets/icon/facebook_logo.png'),
-                  label: const Text("Continue with Facebook"),
-                  style: ElevatedButton.styleFrom(
-                    primary: const Color(0xff1877F2),
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
+                  icon: Image.asset('assets/images/facebook.jpg', height: 24.0),
+                  label: const Text('Continue with Facebook'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {},
-                  icon: Image.asset('assets/icon/apple_logo.png'),
-                  label: const Text("Continue with Apple"),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
+                  icon:
+                      Image.asset('assets/images/apple_logo.png', height: 24.0),
+                  label: const Text('Continue with Apple'),
                 ),
                 ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: Image.asset('assets/icon/google_logo.png'),
-                  label: const Text("Continue with Google"),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GoogleSignInScreen()),
+                    );
+                  },
+                  icon: Image.asset('assets/images/google.jpg', height: 24.0),
+                  label: const Text('Continue with Google'),
                 ),
               ],
             ),

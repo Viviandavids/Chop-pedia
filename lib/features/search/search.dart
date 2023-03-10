@@ -1,3 +1,5 @@
+import 'package:chopedia/features/search/categories.dart';
+import 'package:chopedia/shared_widget/image_container.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_side_sheet/modal_side_sheet.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,14 +14,6 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
-    var container = Container(
-      height: 60,
-      width: 60,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        color: const Color(0xffD62E1E),
-      ),
-    );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -76,7 +70,7 @@ class _SearchState extends State<Search> {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(70),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 15),
+            padding: const EdgeInsets.fromLTRB(15, 10, 15, 20),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -103,8 +97,10 @@ class _SearchState extends State<Search> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Search 2+ million Recipes',
-                        ),
+                            hintText: 'Search 2+ million Recipes',
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.transparent))),
                       ),
                     ),
                   )
@@ -141,31 +137,52 @@ class _SearchState extends State<Search> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              container,
-              container,
-              container,
-              container,
-              container,
-              container,
+            children: const [
+              ImageContainer(imageAsset: 'assets/images/whiterice.jpg'),
+              ImageContainer(imageAsset: 'assets/images/yam.jpg'),
+              ImageContainer(imageAsset: 'assets/images/potatoes.jpg'),
+              ImageContainer(imageAsset: 'assets/images/rawplantain.jpg'),
+              ImageContainer(imageAsset: 'assets/images/palmoil.jpg'),
+              ImageContainer(imageAsset: 'assets/images/tomatoes.jpg'),
             ],
           ),
-          const Align(
+          Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(15, 30, 0, 5),
-              child: Text(
-                'Categories',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              padding: const EdgeInsets.fromLTRB(15, 30, 15, 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Categories',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Categories()),
+                      );
+                    },
+                    child: const Text(
+                      'View all >',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xffD62E1E),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ),
           Container(
-            height: 440,
+            height: 415,
             padding: const EdgeInsets.all(8.0),
             child: GridView(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -186,7 +203,7 @@ class _SearchState extends State<Search> {
                   height: 150,
                   width: 150,
                   child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(10.0),
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Text(
@@ -205,7 +222,7 @@ class _SearchState extends State<Search> {
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage('assets/images/lunch.jpg')),
+                        image: AssetImage('assets/images/food3.jpg')),
                   ),
                   height: 150,
                   width: 150,
@@ -229,7 +246,7 @@ class _SearchState extends State<Search> {
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage('assets/images/dinner.jpg')),
+                        image: AssetImage('assets/images/yamporridge.jpg')),
                   ),
                   height: 150,
                   width: 150,

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:chopedia/features/search/categories.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({Key? key}) : super(key: key);
+class CategoriesHome extends StatefulWidget {
+  const CategoriesHome({Key? key}) : super(key: key);
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<CategoriesHome> createState() => _CategoriesHomeState();
 }
 
-class _CategoriesState extends State<Categories> {
+class _CategoriesHomeState extends State<CategoriesHome> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,14 +29,21 @@ class _CategoriesState extends State<Categories> {
                 ),
                 const Spacer(),
                 GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Categories()),
+                      );
+                    },
                     child: const Text(
-                  'View all >',
-                  style: TextStyle(
-                    color: Color(0xffD62E1E),
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
+                      'View all >',
+                      style: TextStyle(
+                        color: Color(0xffD62E1E),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
               ],
             ),
             Row(
@@ -70,7 +78,7 @@ class _CategoriesState extends State<Categories> {
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage('assets/images/food4.jpg')),
+                        image: AssetImage('assets/images/yamporridge.jpg')),
                   ),
                   height: 200,
                   width: 180,

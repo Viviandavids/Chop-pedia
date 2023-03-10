@@ -113,6 +113,23 @@ flutter:
      - assets/images/beans1.jpg
      - assets/images/beans.jpg
      - assets/images/basmatic.jpg
+     - assets/images/rice1.jpg
+     - assets/images/palmoil.jpg
+     - assets/images/rawplantain.jpg
+     - assets/images/rawbeans.jpg
+     - assets/images/potatoes.jpg
+     - assets/images/tomatoes.jpg
+     - assets/images/yam.jpg
+     - assets/images/whiterice.jpg
+     - assets/images/bellpepper.jpg
+     - assets/images/brownrice.jpg
+     - assets/images/jollofrice.jpg
+     - assets/images/porridge.png
+     - assets/images/yamporridge.jpg
+     - assets/images/google.jpg
+     - assets/images/facebook.jpg
+     - assets/images/apple_logo.png
+
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

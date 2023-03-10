@@ -1,5 +1,8 @@
 import 'package:chopedia/authentication/google_sign_in.dart';
+import 'package:chopedia/authentication/sign_in_screen.dart';
+import 'package:chopedia/authentication/sign_up_screen.dart';
 import 'package:chopedia/features/home/home.dart';
+import 'package:chopedia/main.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatefulWidget {
@@ -13,70 +16,112 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: const CircleAvatar(
-          backgroundImage: AssetImage('assets/icon/icon.png'),
+        toolbarHeight: 80,
+        backgroundColor: Colors.white,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Container(
+            padding: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                image: const DecorationImage(
+                    image: const AssetImage('assets/icon/icon.png'))),
+          ),
         ),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Home()),
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const MyHomePage(title: "CHOP'PEDIA")),
               );
             },
-            child: const Text('Log in as a guest'),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Log in as a guest',
+                style: TextStyle(decoration: TextDecoration.underline),
+              ),
+            ),
           ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Sign in or create account',
+            const Text(
+              'Sign in or create an account',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline5,
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 32.0),
+            const SizedBox(height: 50),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                );
+              },
               child: const Text('Sign up to Choppedia'),
             ),
-            const SizedBox(height: 16.0),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignInPage()),
+                );
+              },
               child: const Text('Log in to Choppedia'),
             ),
-            const SizedBox(height: 16.0),
             Row(
               children: const [
                 Expanded(
-                  child: Divider(),
+                  child: Divider(
+                    thickness: 2,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text('OR'),
                 ),
                 Expanded(
-                  child: Divider(),
+                  child: Divider(
+                    thickness: 2,
+                  ),
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ElevatedButton.icon(
                   onPressed: () {},
-                  icon: Image.asset('assets/facebook_logo.png', height: 24.0),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    elevation: 10,
+                  ),
+                  icon: Image.asset('assets/images/facebook.jpg', height: 24.0),
                   label: const Text('Continue with Facebook'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {},
-                  icon: Image.asset('assets/apple_logo.png', height: 24.0),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    elevation: 10,
+                  ),
+                  icon:
+                      Image.asset('assets/images/apple_logo.png', height: 24.0),
                   label: const Text('Continue with Apple'),
                 ),
                 ElevatedButton.icon(
@@ -84,20 +129,25 @@ class _WelcomeState extends State<Welcome> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => GoogleSignInScreen()),
+                          builder: (context) => const GoogleSignInScreen()),
                     );
                   },
-                  icon: Image.asset('assets/google_logo.png', height: 24.0),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    elevation: 10,
+                  ),
+                  icon: Image.asset('assets/images/google.jpg', height: 24.0),
                   label: const Text('Continue with Google'),
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
-            Text(
-              'By using Chop’pedia, you agree to our Privacy Policy and Terms of Use',
+            const Text(
+              "By using Chop’pedia, you agree to our Privacy Policy and Terms of Use",
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.caption,
+              style: TextStyle(color: Colors.grey, fontSize: 14),
             ),
+            const SizedBox(height: 52),
           ],
         ),
       ),

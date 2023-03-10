@@ -28,11 +28,12 @@ class _GoogleSignInScreenState extends State<GoogleSignInScreen> {
           children: [
             ElevatedButton(
               onPressed: _handleGoogleSignIn,
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/google_logo.png',
+                    'assets/images/google.jpg',
                     height: 24.0,
                   ),
                   const SizedBox(width: 16.0),

@@ -1,3 +1,4 @@
+import 'package:chopedia/authentication/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,7 +13,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 1), () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Welcome()),
+      );
     });
   }
 

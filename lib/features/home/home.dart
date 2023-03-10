@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         ),
         Padding(
           padding: EdgeInsets.all(10.0),
-          child: Categories(),
+          child: CategoriesHome(),
         ),
       ]),
     );
@@ -72,10 +72,10 @@ class _VideoState extends State<Video> {
   final List<YouTube> carousel = const [
     YouTube(
       timeDuration: '20 mins',
-      food: 'Akara and pap',
+      food: 'Egusi and Eba',
       ratings: 4.8,
       ingredient: '8 Ingredients',
-      image: 'assets/images/breakfast3.jpg',
+      image: 'assets/images/food6.jpg',
     ),
     YouTube(
       timeDuration: '10 mins',
@@ -93,10 +93,10 @@ class _VideoState extends State<Video> {
     ),
     YouTube(
       timeDuration: '30 mins',
-      food: 'Amala and Ewedu',
+      food: 'Porridge beans',
       ratings: 4.2,
       ingredient: '15 ingredients',
-      image: 'assets/images/amala.jpg',
+      image: 'assets/images/porridge.png',
     ),
   ];
 
